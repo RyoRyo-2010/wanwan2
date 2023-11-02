@@ -18,4 +18,9 @@ public class Buttons : MonoBehaviour
     Application.Quit();//ゲームプレイ終了
 #endif
     }
+
+    public void Game()
+    {
+        SceneManager.LoadScene("Game");
+    }
 }
