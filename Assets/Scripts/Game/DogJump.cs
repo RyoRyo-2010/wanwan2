@@ -19,7 +19,7 @@ public class DogJump : MonoBehaviour
     private float JumpableTime = 0.0f;
     private bool Jumpable = true;
 
-    private int JumpCount = 1;//Å‰‚©‚çÔƒuƒ‚ªo‚È‚¢‘Îô
+    private int JumpCount = 0;
 
     [SerializeField]
     private GameObject MakeJumpBlocks;
@@ -47,10 +47,12 @@ public class DogJump : MonoBehaviour
                 //10‰ñ”ò‚Ô‚²‚Æ‚É
                 Debug.Log("JumpCount % 10:" + JumpCount % 10);
                 Debug.Log("JumpCount:" + JumpCount);
-                if (JumpCount % 10+1 == 0)
-                {
-                    MakeJumpBlocksScript.RedBlockGenerate();
-                }
+                
+            }
+            if (JumpCount >= 10)
+            {
+                MakeJumpBlocksScript.RedBlockGenerate();
+                JumpCount = 0;
             }
             JumpCount++;
         }
