@@ -21,6 +21,8 @@ public class RedSensor : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("GameOver!");
+            Timer.CanMeasure = false;
+            CatchTime.time = Timer.time;
             FadeManager.Instance.LoadScene("Result", 2.0f);
         }
     }
