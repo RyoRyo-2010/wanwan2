@@ -21,7 +21,7 @@ public class RedSensor : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("GameOver!");
-            GoGameover.Instance.CanMove = true;
+            FadeManager.Instance.LoadScene("Result", 2.0f);
         }
     }
 }
