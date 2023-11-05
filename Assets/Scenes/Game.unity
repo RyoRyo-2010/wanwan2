@@ -354,18 +354,15 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.91079676, y: 0.0044355392}
-  - {x: -0.9005152, y: 0.092552185}
-  - {x: -0.61776173, y: 0.17934036}
-  - {x: -0.04067087, y: 0.19271564}
-  - {x: 0.0025706291, y: 0.79247475}
-  - {x: 0.8726404, y: 0.89351463}
-  - {x: 0.8969083, y: 0.019742966}
-  - {x: 0.29205012, y: -0.78983116}
-  - {x: -0.7028887, y: -0.7988844}
-  - {x: -0.9078932, y: -0.0088710785}
+  - {x: -0.8891579, y: 0.091151714}
+  - {x: 0.005918026, y: 0.7727313}
+  - {x: 0.82352304, y: 0.8974476}
+  - {x: 0.941257, y: 0.20907974}
+  - {x: 0.3032441, y: -0.78177214}
+  - {x: -0.7885437, y: -0.8084693}
+  - {x: -0.8974074, y: 0.10026646}
   m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: -0.89, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
 --- !u!50 &731921425
@@ -1189,6 +1186,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1733733773}
+  - {fileID: 1990689377}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1237,6 +1235,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpBlock: {fileID: 7957729467613401810, guid: a5c8ccd7bc6a5114f9a64b79a7d0b30e, type: 3}
   RedJumpBlock: {fileID: 7957729467613401810, guid: 63ee10dd8a96a8f4eb347d26e8849ea4, type: 3}
+  make2TierBlockPosition: {fileID: 0}
+--- !u!1 &1990689376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1990689377}
+  m_Layer: 0
+  m_Name: Make2TierBlockPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1990689377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990689376}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1439869775}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2100554638
 GameObject:
   m_ObjectHideFlags: 0
