@@ -11,6 +11,10 @@ namespace Assets.Scripts.Game
         public GameObject RedJumpBlock;
         float timer = 0;
         float spowntime = 2; //2秒ごとに生成させる
+
+        //2段め
+        [SerializeField]
+        private GameObject make2TierBlockPosition;
         void Update()
         {
             timer += Time.deltaTime; //timerの値を1秒に1のペースで増やす
@@ -41,7 +45,16 @@ namespace Assets.Scripts.Game
             //大きさ_z = 1
             obj.transform.localScale = new Vector3(Random.Range(1.8f, 4.0f), Random.Range(0.3f, 1.5f), 1);
             Vector2 position = obj.transform.position;
-            position.y = Random.Range(-3.3f, -2.6f);
+            //
+            //1段目か2段目か
+            if(Random.Range(1,3) == 1)
+            {
+                position.y = Random.Range(-3.5f, -2.6f);
+            }
+            else
+            {
+                position.y = Random.Range(0.0f, 2.0f);
+            }
             obj.transform.position = position;
         }
 
