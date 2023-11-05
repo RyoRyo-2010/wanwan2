@@ -51,7 +51,7 @@ public class DogJump : MonoBehaviour
             }
             if (JumpCount >= 10)
             {
-                MakeJumpBlocksScript.RedBlockGenerate();
+                MakeJumpBlocksScript.BlockGenerate(Assets.Scripts.Game.MakeJumpBlocks.BlockType.Red);
                 JumpCount = 0;
             }
             JumpCount++;
