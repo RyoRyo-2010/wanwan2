@@ -23,7 +23,7 @@ public class MoveImage : MonoBehaviour
         {
             case MoveMode.Wait:
                 timer += Time.deltaTime;
-                if (timer >= 4.0f)
+                if (timer >= 3+2.0f)
                 {
                     moveMode = MoveMode.Move;
                 }

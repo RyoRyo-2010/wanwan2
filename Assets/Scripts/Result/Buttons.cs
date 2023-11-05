@@ -10,6 +10,8 @@ namespace Assets.Scripts.Result
         public void OneMore()
         {
             SceneManager.LoadScene("Game");
+            Timer.CanMeasure = true;
+            Timer.time = 0;
         }
 
         public void BackMenu()

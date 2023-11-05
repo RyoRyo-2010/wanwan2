@@ -23,7 +23,7 @@ public class RedSensor : MonoBehaviour
             Debug.Log("GameOver!");
             Timer.CanMeasure = false;
             CatchTime.time = Timer.time;
-            FadeManager.Instance.LoadScene("Result", 2.0f);
+            FadeManager.Instance.LoadScene("Result", 3.0f);
         }
     }
 }
