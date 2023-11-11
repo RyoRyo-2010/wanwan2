@@ -31,6 +31,7 @@ public class DogJump : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
+        Debug.Log("OnJump");
         if (context.phase == InputActionPhase.Performed)
         {
             if (Jumpable)
