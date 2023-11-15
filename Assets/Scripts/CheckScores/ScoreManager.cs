@@ -39,7 +39,7 @@ public class ScoreManager : MonoBehaviour
         //‰æ–Ê‚É•\Ž¦‚³‚¹‚é
         foreach(Score s in Scores.scores)
         {
-            scoreText += $"{s.rank}.{s.date} {s.score}{Environment.NewLine}";
+            scoreText += $"{s.rank}.{s.date} {s.score/10.0f}•b{Environment.NewLine}";
         }
         ScoreText.text = scoreText;
     }
@@ -61,5 +61,5 @@ public class Score
 {
     public int rank { get; set; }
     public string date { get; set; }
-    public int score { get; set; }
+    public long score { get; set; }//10‚ÅŠ„‚é‚±‚Æ
 }

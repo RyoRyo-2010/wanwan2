@@ -397,8 +397,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b019bcd40014b14fb8d184195bd64dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstJson: {fileID: 0}
-  ScoreText: {fileID: 0}
+  FirstJson: {fileID: 4900000, guid: b0ce01c8d7b01444b8a0681bc09bd2f1, type: 3}
+  ScoreText: {fileID: 200360276}
 --- !u!4 &1661654157
 Transform:
   m_ObjectHideFlags: 0
