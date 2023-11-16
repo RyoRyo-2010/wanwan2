@@ -58,7 +58,7 @@ public class ScoreManager : MonoBehaviour
 		scores.scores[where].score = score;
 		scores.scores[where].date = DateTime.Now.ToString("d");
 		//JSON‚Ö•ÏŠ·
-		string json = JsonConvert.SerializeObject(scores, Formatting.Indented);
+		string json = JsonConvert.SerializeObject(scores, Formatting.None);
 		//‘‚«‚İ
 		StreamWriter sw = new StreamWriter(FilePath,false, Encoding.UTF8);
 		sw.Write(json);
