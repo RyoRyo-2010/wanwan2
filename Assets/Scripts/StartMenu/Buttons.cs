@@ -40,7 +40,7 @@ namespace Assets.Scripts.StartMenu
 					resetconfirm = Resetconfirm.really;
 					break;
 				case Resetconfirm.really:
-					File.Delete(ScoreManager.FilePath);
+					ScoreManager.MakeJsonFile();
 					text.text = "è¡ÇµÇΩÅI";
 					resetconfirm = Resetconfirm.done;
 					break;

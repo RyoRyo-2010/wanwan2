@@ -8,7 +8,6 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public TextAsset FirstJson;
 
     [SerializeField]
     public Text ScoreText;
@@ -21,10 +20,7 @@ public class ScoreManager : MonoBehaviour
 
         if (!File.Exists(FilePath))
         {
-            StreamWriter sw = new StreamWriter(FilePath, false, Encoding.UTF8);
-            sw.Write(FirstJson.text);
-            sw.Flush();
-            sw.Close();
+			MakeJsonFile();
         }
 		//データ読み込み
 		Scores = ReadJson();
@@ -39,6 +35,25 @@ public class ScoreManager : MonoBehaviour
 		
 		Debug.Log(FilePath);
     }
+
+	public static void MakeJsonFile()
+	{
+		ScoresJson scoresJson = new ScoresJson();
+		scoresJson.scores = new List<Score>();
+		
+		for (int i = 1; i <= 5; i++)
+		{
+			scoresJson.scores.Add(new Score { rank = i, score = 0, date = "データなし" });
+		}
+
+		//JSONへ変換
+		string json = JsonConvert.SerializeObject(scoresJson, Formatting.None);
+		//書き込み
+		StreamWriter sw = new StreamWriter(FilePath, false, Encoding.UTF8);
+		sw.Write(json);
+		sw.Flush();
+		sw.Close();
+	} 
 	/// <summary>
 	/// ハイスコアを更新します。
 	/// </summary>
