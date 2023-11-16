@@ -193,15 +193,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '1.2023/11/01 99999999999999999pts.
-
-    2.2023/12/08 30pts.
-
-    3.
-
-    4.
-
-    5.'
+  m_Text: "1.\u30C7\u30FC\u30BF\u306A\u3057 0\u79D2\r\n2.\u30C7\u30FC\u30BF\u306A\u3057
+    0\u79D2\r\n3.\u30C7\u30FC\u30BF\u306A\u3057 0\u79D2\r\n4.\u30C7\u30FC\u30BF\u306A\u3057
+    0\u79D2\r\n5.\u30C7\u30FC\u30BF\u306A\u3057 0\u79D2\r\n"
 --- !u!222 &200360277
 CanvasRenderer:
   m_ObjectHideFlags: 0
