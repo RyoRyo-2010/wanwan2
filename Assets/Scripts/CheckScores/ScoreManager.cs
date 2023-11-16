@@ -32,20 +32,31 @@ public class ScoreManager : MonoBehaviour
         //画面に表示させる
         foreach (Score s in Scores.scores)
         {
-            scoreText += $"{s.rank}.{s.date} {s.score / 10.0f}秒{Environment.NewLine}";
+            scoreText += $"{s.rank}.{s.date} {s.score.ToString("F1")}秒{Environment.NewLine}";
         }
         ScoreText.text = scoreText;
 
 		
 		Debug.Log(FilePath);
     }
-
-    public static void UpdateHighScore(int score)
+	/// <summary>
+	/// ハイスコアを更新します。
+	/// </summary>
+	/// <param name="score">今回出たスコア</param>
+	/// <returns>更新に成功したらtrue、更新しなかったらfalse</returns>
+    public static bool UpdateHighScore(float score)
     {
         //読み込み
         ScoresJson scores = ReadJson();
 		//更新
-		scores = UpdateData(scores, score);
+		int where = WhereInsert(score, scores);
+		if (where == -1)
+		{
+			return false;
+		}
+		scores = ArrayShift(where, scores);
+		scores.scores[where].score = score;
+		scores.scores[where].date = DateTime.Now.ToString("d");
 		//JSONへ変換
 		string json = JsonConvert.SerializeObject(scores, Formatting.Indented);
 		//書き込み
@@ -53,21 +64,10 @@ public class ScoreManager : MonoBehaviour
 		sw.Write(json);
 		sw.Flush();
 		sw.Close();
+		return true;
     }
 
-	private static ScoresJson UpdateData(ScoresJson data, int input)
-	{
-		int where = WhereInsert(input, data);
-		if (where == -1)
-		{
-			return data;
-		}
-		data = ArrayShift(where, data);
-		data.scores[where].score = input;
-		data.scores[where].date = DateTime.Now.ToString("d");
-		return data;
-	}
-	private static int WhereInsert(int input, ScoresJson data)
+	private static int WhereInsert(float input, ScoresJson data)
 	{
 		//1つづつ、どこに入れるか検証
 		for (int i = 0; i < data.scores.Count; i++)
@@ -133,8 +133,8 @@ public class Score
     {
         get; set;
     }
-    public long score
-    {
-        get; set;
-    }//10で割ること
+    public float score
+	{
+		get; set;
+	}
 }
