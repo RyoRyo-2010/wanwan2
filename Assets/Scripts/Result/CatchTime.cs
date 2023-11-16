@@ -11,7 +11,9 @@ public class CatchTime : MonoBehaviour
     void Start()
     {
         GetComponent<Text>().text = $"¡‰ñ‚Ì‹L˜^‚ÍA{time.ToString("F1")}•b‚Å‚µ‚½B";
-    }
+		Timer.CanMeasure = true;
+		Timer.time = 0;
+	}
 
     // Update is called once per frame
     void Update()
