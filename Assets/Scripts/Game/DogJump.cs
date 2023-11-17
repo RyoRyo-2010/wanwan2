@@ -24,6 +24,9 @@ public class DogJump : MonoBehaviour
     [SerializeField]
     private GameObject MakeJumpBlocks;
     private MakeJumpBlocks MakeJumpBlocksScript;
+	private AudioSource audioSource;
+	[SerializeField]
+	private AudioClip AudioClip;
     public void OnMove(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();
@@ -41,7 +44,8 @@ public class DogJump : MonoBehaviour
 
                 //Rigidbody2Dに力を加える
                 Rigidbody2D.AddForce(force); //とぶ
-                
+				//効果音鳴らす
+				audioSource.PlayOneShot(AudioClip);
                 JumpableTime = 1.0f;
                 Jumpable = false;
                 //赤ブロック
@@ -65,6 +69,8 @@ public class DogJump : MonoBehaviour
         JumpableTimeTextUpdate();
         //MakeJumpBlocksを取得！(最強)
         MakeJumpBlocksScript = MakeJumpBlocks.GetComponent<MakeJumpBlocks>();
+		//AudioSouceを取得
+		audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
