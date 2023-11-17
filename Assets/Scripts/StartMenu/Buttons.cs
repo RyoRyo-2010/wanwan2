@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ namespace Assets.Scripts.StartMenu
 		private Resetconfirm resetconfirm = Resetconfirm.none;
 		[SerializeField]
 		private Text text;
+		
 		public void CheckScores()
 		{
 			SceneManager.LoadScene("CheckScores");
