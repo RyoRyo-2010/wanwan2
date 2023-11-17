@@ -1,4 +1,3 @@
-using Assets.Scripts.Game;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -22,8 +21,8 @@ public class DogJump : MonoBehaviour
     private int JumpCount = 0;
 
     [SerializeField]
-    private GameObject MakeJumpBlocks;
-    private MakeJumpBlocks MakeJumpBlocksScript;
+    private GameObject MakeMoveScripts;
+    private MakeMoveScript makeMove;
 	private AudioSource audioSource;
 	[SerializeField]
 	private AudioClip AudioClip;
@@ -56,7 +55,7 @@ public class DogJump : MonoBehaviour
             }
             if (JumpCount >= 10)
             {
-                MakeJumpBlocksScript.BlockGenerate(Assets.Scripts.Game.MakeJumpBlocks.BlockType.Red);
+                makeMove.BlockGenerate(MakeMoveScript.BlockType.Red);
                 JumpCount = 0;
             }
             JumpCount++;
@@ -68,7 +67,7 @@ public class DogJump : MonoBehaviour
     {
         JumpableTimeTextUpdate();
         //MakeJumpBlocks‚ğæ“¾I(Å‹­)
-        MakeJumpBlocksScript = MakeJumpBlocks.GetComponent<MakeJumpBlocks>();
+        makeMove = MakeMoveScripts.GetComponent<MakeMoveScript>();
 		//AudioSouce‚ğæ“¾
 		audioSource = GetComponent<AudioSource>();
     }
