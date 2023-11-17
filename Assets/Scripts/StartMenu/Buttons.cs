@@ -51,5 +51,10 @@ namespace Assets.Scripts.StartMenu
 		{
 			none,really,done
 		}
+
+		public void HowToPlay()
+		{
+			SceneManager.LoadScene("HowToPlay");
+		}
 	}
 }
