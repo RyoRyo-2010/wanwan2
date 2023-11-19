@@ -70,6 +70,8 @@ public class DogJump : MonoBehaviour
         makeMove = MakeMoveScripts.GetComponent<MakeMoveScript>();
 		//AudioSouce‚ðŽæ“¾
 		audioSource = GetComponent<AudioSource>();
+		Debug.Log(Screen.width);
+		Debug.Log(Screen.height);
     }
 
     void Update()
