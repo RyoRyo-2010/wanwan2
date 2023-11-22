@@ -9,11 +9,16 @@ public class MoveImage : MonoBehaviour
     [SerializeField]
     private float spped;
     private MoveMode moveMode = MoveMode.Wait;
+	[SerializeField]
+	private GameObject Canvas;
+	private float moveUntilY;
     // Start is called before the first frame update
     void Start()
     {
         rectTransform = gameObject.GetComponent<RectTransform>();
         position = new Vector2(0, 0);
+		RectTransform rect = Canvas.GetComponent<RectTransform>();
+		moveUntilY = rect.rect.height;
     }
 
     // Update is called once per frame
@@ -32,7 +37,7 @@ public class MoveImage : MonoBehaviour
             case MoveMode.Move:
                 position.y += spped;
                 rectTransform.anchoredPosition = position;
-                if (position.y >= 720)
+                if (position.y >= moveUntilY)
                 {
                     moveMode = MoveMode.End;
                 }
