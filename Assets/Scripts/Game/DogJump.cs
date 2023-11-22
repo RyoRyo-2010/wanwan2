@@ -70,9 +70,12 @@ public class DogJump : MonoBehaviour
         makeMove = MakeMoveScripts.GetComponent<MakeMoveScript>();
 		//AudioSouce‚ðŽæ“¾
 		audioSource = GetComponent<AudioSource>();
-		Debug.Log(Screen.width);
-		Debug.Log(Screen.height);
-    }
+		//Œ¢‚ðˆÚ“®
+		Vector3 viewPort = Camera.main.ViewportToWorldPoint(new Vector3(0.3f, 1.5f, 0));
+		Debug.Log(viewPort);
+		viewPort.z = 0;
+		this.transform.position = viewPort;
+	}
 
     void Update()
     {
